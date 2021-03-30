@@ -130,7 +130,7 @@ class ContentTypes extends AbstractDecoratorWriter
                 );
             } elseif ($shapeIndex instanceof AbstractDrawingAdapter) {
                 $extension = strtolower($shapeIndex->getExtension());
-                $mimeType = $shapeIndex->getMimeType();
+                $mimeType = $shapeIndex ? $shapeIndex->getMimeType() : 'image/png';
 
                 if (!isset($aMediaContentTypes[$extension])) {
                     $aMediaContentTypes[$extension] = $mimeType;

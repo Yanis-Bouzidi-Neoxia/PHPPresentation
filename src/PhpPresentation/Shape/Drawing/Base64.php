@@ -118,7 +118,7 @@ class Base64 extends AbstractDrawingAdapter
             $image = getimagesizefromstring($sImage);
         }
 
-        return image_type_to_mime_type($image[2]);
+        return is_array($image) ? $image['mime'] : null;
     }
 
     /**
